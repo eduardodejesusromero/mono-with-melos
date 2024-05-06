@@ -1,0 +1,26 @@
+name: flutter_skeleton
+
+packages:
+  - packages/**
+  - apps/**
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
+
+scripts:
+  analyze:
+    exec: flutter analyze .
+  outdated:
+    exec: flutter pub outdated
+  test:
+    exec: flutter test
+  run:counter_app:
+    run: melos exec -- flutter run lib/main.dart -d iPhone 15 Pro Max
+    select-package:
+      scope:  'counter_app'
+
+  run:hello_app:
+    run: melos exec -- flutter run lib/main.dart -d iPhone 15 Pro Max
+    select-package:
+      scope:  'hello_app'
